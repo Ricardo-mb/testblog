@@ -6,6 +6,8 @@
  */
 
 import * as React from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faHeart } from "@fortawesome/free-solid-svg-icons"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
@@ -37,11 +39,13 @@ const Layout = ({ children }) => {
           style={{
             marginTop: `var(--space-5)`,
             fontSize: `var(--font-sm)`,
+            textAlign: `center`,
           }}
         >
-          © {new Date().getFullYear()} &middot; Built with
+          © {new Date().getFullYear()} &middot; Made with love
           {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
+          <FontAwesomeIcon icon={faHeart} style={{ color: "red" }} /> by Ricardo
+          MBK
         </footer>
       </div>
     </>
