@@ -1,14 +1,12 @@
 import * as React from "react"
-// import { StaticImage } from "gatsby-plugin-image"
-
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import * as styles from "../components/index.module.css"
-import { Link } from "gatsby"
 
 const IndexPage = () => (
-  <Layout>
+  <Layout pageTitle="Home Page">
     <main className={styles.textCenter}>
+      {/* If you want to add an image later, uncomment the code below */}
       {/* <StaticImage
         src="../images/example.png"
         loading="eager"
@@ -18,22 +16,17 @@ const IndexPage = () => (
         alt=""
         style={{ marginBottom: `var(--space-3)` }}
       /> */}
-      <p style={{ textAlign: `center` }}>
+      <h2>Welcome to my Portfolio</h2>
+      <p>
         Hello, I'm <b>Ricardo</b>, a passionate{" "}
-        <b>technology enthusiast and web developer</b> <br /> dedicated to
-        building innovative digital solutions.
+        <b>technology enthusiast and web developer</b> dedicated to building
+        innovative digital solutions.
       </p>
-      <h1>Welcome to my Portfolio</h1>
-      <Link to="/about">About</Link>
     </main>
   </Layout>
 )
 
-/**
- * Head export to define metadata for the page
- *
- * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
- */
-export const Head = () => <Seo title="Home" />
+// Define SEO metadata for the page
+export const Head = () => <Seo title="Home Page"></Seo>
 
 export default IndexPage

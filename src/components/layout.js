@@ -9,11 +9,17 @@ import * as React from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faHeart } from "@fortawesome/free-solid-svg-icons"
 import { useStaticQuery, graphql } from "gatsby"
-
+import { Link } from "gatsby"
 import Header from "./header"
-import "./layout.css"
+import {
+  container,
+  // heading,
+  navLinks,
+  navLinkItem,
+  navLinkText,
+} from "./layout.module.css"
 
-const Layout = ({ children }) => {
+const Layout = ({ pageTitle, children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -34,7 +40,22 @@ const Layout = ({ children }) => {
           padding: `var(--size-gutter)`,
         }}
       >
-        <main>{children}</main>
+        <main className={container}>
+          <nav>
+            <ul className={navLinks}>
+              <li className={navLinkItem}>
+                <Link to="/" className={navLinkText}>
+                  Home
+                </Link>
+              </li>
+              <li className={navLinkText}>
+                <Link to="/about">About</Link>
+              </li>
+            </ul>
+          </nav>
+          <h1>{pageTitle}</h1>
+          {children}
+        </main>
         <footer
           style={{
             marginTop: `var(--space-5)`,

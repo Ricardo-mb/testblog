@@ -1,9 +1,9 @@
 import * as React from "react"
 import Layout from "../components/layout"
+
 const AboutPage = () => {
   return (
-    <Layout>
-      <h1>About me</h1>
+    <Layout pageTitle="About Me">
       <p style={{ textAlign: `justify` }}>
         I’m a passionate web developer with expertise in creating dynamic,
         user-friendly websites and applications. I specialize in front-end and

@@ -146,8 +146,11 @@ p {
 ul,
 ol {
   margin-left: var(--space-4);
-  list-style-position: outside;
-  list-style-image: none;
+  /* list-style-position: outside; */
+  /* list-style-image: none; */
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 pre {
